@@ -1,5 +1,4 @@
 import './App.css';
-import logo from "./favicon-dictionary.png"
 import Search from "./Search";
 import Dictionary from "./Dictionary";
 
