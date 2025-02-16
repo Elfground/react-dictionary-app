@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import React, { useState } from "react";
 import './App.css';
 import Search from "./Search";
 import Dictionary from "./Dictionary";
