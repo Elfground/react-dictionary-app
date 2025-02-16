@@ -2,7 +2,16 @@
     margin: 10px 0;
 }
 
-.Dictionary .h1 {
+.Dictionary h1 {
     font-family: "Arimo", serif;
     font-weight: 100;
+}
+
+.Dictionary h2 {
+    font-family: "Arimo", serif;
+    font-weight: 100;
+}
+
+.Dictionary h4 {
+    margin: 20px 0px 0px 0px;
 }

@@ -8,7 +8,7 @@ export default function Dictionary({ results }) {
     
     return (
         <div className="Dictionary">
-            <h2>{results.word}</h2>
+            <h1>{results.word}</h1>
             {results.meanings && results.meanings.map((meaning, index) => (
                 <div key={index}>
                     <h4>{meaning.partOfSpeech}</h4>
