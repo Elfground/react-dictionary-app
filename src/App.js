@@ -7,7 +7,7 @@ export default function App() {
     Here's the Dictionary
     </div>
     <footer>
-      Made by <a href="https://github.com/Elfground">Monica Alvmarken</a>, open-sourced on GitHub
+      Made by <a href="https://github.com/Elfground" rel="noreferrer">Monica Alvmarken</a>, open-sourced on <a href="https://github.com/Elfground/react-dictionary-app" rel="noreferrer">GitHub</a>
     </footer>
     </div>
   );
