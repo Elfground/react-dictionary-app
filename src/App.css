@@ -1,8 +1,35 @@
 .App {
   text-align: center;
+  font-family: "Josefin Sans", serif;
+}
+
+.App h1 {
+  font-family: "Arimo", serif;
+  font-weight: 100;
+  margin: 0px 0px -10px 0px;
+}
+.App .container {
+  max-width: 600px;
+  margin: 20px auto;  
+  background-color: rgb(255, 255, 255);
 }
 .App header {
+  margin: 0 auto;
+  font-family: "Josefin Sans", serif;
   margin-top: 20px;
+  max-width: 300px;
+  padding: 200px 0px 50px 0px;
+  background-image: url(./header_image.png);
+  background-position: center top;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.App .search-component {
+  margin: -100px 0px 0px 60px;
+}
+
+.App .dictionary-component {
+  margin: 40px;
 }
 
 .App-logo {
@@ -10,3 +37,8 @@
   width: 100px;
   height: 100px;
 } 
+
+.App footer {
+  font-family: "Josefin Sans", serif;
+  margin: 30px 0;
+}

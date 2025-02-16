@@ -1,0 +1,45 @@
+.Search {
+    font-family: "Josefin Sans", serif;
+    display: block;
+    margin: 0px 0px 0px 40px;
+    border: 0.4px solid;
+    padding: 28px 5px 3px 5px;
+    max-width: 150px;
+    border-radius: 5px;
+    font-size: 10px;
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+}
+
+.Search .search-box {
+    font-family: "Josefin Sans", serif;
+    font-weight: 100px;
+    padding: 0px 0px 0px 5px;
+    font-size: 12px;
+    border-radius: 3px;
+    color: black;
+}
+
+.Search .search-button {
+    font-family: "Josefin Sans", serif;
+    font-weight: 100px;
+    margin: 5px;
+    padding: 3px 18px 3px 18px;
+    background-color: rgba(92, 75, 91,1);
+    color: white;
+    border-radius: 3px;
+    border-style: none;
+}
+
+::placeholder {
+    font-family: "Josefin Sans", serif;
+    color: black;
+    opacity: 1;
+    font-size: 11px;
+  }
+  
+  ::-ms-input-placeholder { /* Edge 12 -18 */
+    font-family: "Josefin Sans", serif;
+    color: black;
+    font-size: 11px;
+  }
