@@ -1,8 +1,15 @@
+import react, { useState } from "react";
 import './App.css';
 import Search from "./Search";
 import Dictionary from "./Dictionary";
 
 export default function App() {
+  const [results, setResults] = useState({});
+
+  function handleSearchResults(data) {
+    setResults(data);
+}
+
   return (
     <div className="App">
       <div className="container">
@@ -11,10 +18,10 @@ export default function App() {
     </header>
     <main>
       <div className="search-component">
-      <Search />
+      <Search onResults={handleSearchResults} />
       </div>
       <div className="dictionary-component">
-      <Dictionary />
+      <Dictionary results={results}/>
       </div>
     </main>
     <footer>
