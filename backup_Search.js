@@ -6,14 +6,13 @@ export default function Search({ onResults }) {
     const [keyword, setKeyword] = useState("");
 
     function handleResponse(response) {
-        console.log("Extracted Data:", response.data);
-        onResults(response.data);
+        console.log("Extracted Data:", response.data[0]);
+        onResults(response.data[0]);
     }
 
     function lookup(event) {
-         // API documentation: https://dictionaryapi.dev/
-        let apiKey = "2f78437a500ef24fc3e9894233eftb0o";
-        let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
+        // API documentation: https://dictionaryapi.dev/
+        let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en/${keyword}`;
         axios.get(apiUrl).then(handleResponse);
     }
 
