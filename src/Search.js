@@ -1,25 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import "./Search.css"
 
 export default function Search({ onResults }) {
     const [keyword, setKeyword] = useState("leaf");
 
+
     function handleResponse(response) {
         console.log("Extracted Data:", response.data);
         onResults(response.data);
     }
 
-    function lookup() {
-         // API documentation: https://dictionaryapi.dev/
+    const lookup = useCallback((word) => {
         let apiKey = "2f78437a500ef24fc3e9894233eftb0o";
-        let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${keyword}&key=${apiKey}`;
+        let apiUrl = `https://api.shecodes.io/dictionary/v1/define?word=${word}&key=${apiKey}`;
+        
         axios.get(apiUrl).then(handleResponse);
-    }
+    }, []);
 
     function handleSubmit(event) {
         event.preventDefault();
-        lookup();
+        lookup(keyword);
     }
 
     function handleKeywordChange(event) {
@@ -28,7 +29,7 @@ export default function Search({ onResults }) {
 
     useEffect(() => {
         lookup(keyword);
-    }, []);
+    }, [lookup, keyword]);
 
     return (
         <div className="Search">
