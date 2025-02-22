@@ -3,7 +3,7 @@
     display: block;
     margin: 0px 0px 0px 40px;
     border: 0.4px solid;
-    padding: 28px 5px 3px 5px;
+    padding: 8px 5px 3px 5px;
     max-width: 150px;
     border-radius: 5px;
     font-size: 10px;
@@ -31,12 +31,18 @@
     border-style: none;
 }
 
+.Search .question {
+    color: rgb(161, 209, 41);
+    margin-left: -10px;
+    line-height: 20px;
+}
+
 ::placeholder {
     font-family: "Josefin Sans", serif;
     color: black;
     opacity: 1;
     font-size: 11px;
-  }
+ }
   
   ::-ms-input-placeholder { /* Edge 12 -18 */
     font-family: "Josefin Sans", serif;

@@ -5,48 +5,65 @@ export default function Dictionary({ results }) {
     if (!results || Object.keys(results).length === 0) {
         return <p>No results found.</p>;
     }
-// Create a map for the first definition of each Part of Speech
-const uniquePartOfSpeech = new Map();
-const additionalDefinitions = [];
 
-results.meanings.forEach((meaning) => {
-    if (!uniquePartOfSpeech.has(meaning.partOfSpeech)) {
-        // Store one definition per Part of Speech first
-        uniquePartOfSpeech.set(meaning.partOfSpeech, meaning);
-    } else {
-        // If we already have a definition of this Part of Speech, save it for later
-        additionalDefinitions.push(meaning);
+    // Skapa en Map för att lagra en definition per Part of Speech
+    const uniquePartOfSpeech = new Map();
+    const additionalDefinitions = [];
+
+    results.meanings.forEach((meaning) => {
+        if (!uniquePartOfSpeech.has(meaning.partOfSpeech)) {
+            uniquePartOfSpeech.set(meaning.partOfSpeech, meaning);
+        } else {
+            additionalDefinitions.push(meaning);
+        }
+    });
+
+    // Välj upp till tre definitioner
+    let selectedDefinitions = Array.from(uniquePartOfSpeech.values()).slice(0, 3);
+
+    // Om det finns färre än tre, fyll på med fler definitioner från samma ordklass
+    if (selectedDefinitions.length < 3) {
+        const missingCount = 3 - selectedDefinitions.length;
+        selectedDefinitions = [...selectedDefinitions, ...additionalDefinitions.slice(0, missingCount)];
     }
-});
 
-// Choose up to three definitions
-let selectedDefinitions = Array.from(uniquePartOfSpeech.values()).slice(0, 3);
+    return (
+        <div className="Dictionary">
+            <h1 className="text-capitalize">{results.word}</h1>
 
-// If there are fewer than three, fill up with definitions from the same Part of Speech
-if (selectedDefinitions.length < 3) {
-    const missingCount = 3 - selectedDefinitions.length;
-    selectedDefinitions = [...selectedDefinitions, ...additionalDefinitions.slice(0, missingCount)];
-}
+            <div className="row">
+                {selectedDefinitions.map((meaning, index) => (
+                    <div key={index} className="meaning-container col">
+                        {/* Checkbox för att toggla "Läs mer" */}
+                        <input type="checkbox" id={`expand-${index}`} className="expand-toggle" />
+                        
+                        {/* Definition-box */}
+                        <div className="definition-box">
+                            <h4 className="text-capitalize">{meaning.partOfSpeech}</h4>
+                            <p>{meaning.definition}</p>
 
-return (
-    <div className="Dictionary">
-        <h1>{results.word}</h1>
-        {results.phonetic && <h3>/{results.phonetic}/</h3>}
+                            {meaning.example && (
+                                <p><em>Example:</em> "{meaning.example}"</p>
+                            )}
+                        </div>
 
-        {selectedDefinitions.map((meaning, index) => (
-            <div key={index}>
-                <h4>{meaning.partOfSpeech}</h4>
-                <p><strong>Definition:</strong> {meaning.definition}</p>
-                
-                {meaning.example && (
-                    <p><em>Example:</em> "{meaning.example}"</p>
-                )}
+                        {/* "Läs mer" label */}
+                        <label htmlFor={`expand-${index}`} className="expand-button">
+                            Read more
+                        </label>
 
-                {meaning.synonyms && meaning.synonyms.length > 0 && (
-                    <p><strong>Synonyms:</strong> {meaning.synonyms.join(", ")}</p>
-                )}
+                        {/* Synonymer i en separat box */}
+                        {meaning.synonyms && meaning.synonyms.length > 0 && (
+                            <div className="synonyms-box">
+                                <h5>Synonyms:</h5>
+                                {meaning.synonyms.join(", ")}
+                            </div>
+                        )}
+                    </div>
+                ))}
             </div>
-        ))}
-    </div>
-);
+
+            {results.phonetic && <p className="phonetic">Phonetic: /{results.phonetic}/</p>}
+        </div>
+    );
 }

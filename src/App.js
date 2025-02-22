@@ -25,10 +25,10 @@ export default function App() {
       </div>
     </main>
     <footer>
-      Made by <a href="https://github.com/Elfground" rel="noreferrer">Monica Alvmarken</a>, open-sourced on <a href="https://github.com/Elfground/react-dictionary-app" rel="noreferrer">GitHub</a>
+      Made by <a href="https://github.com/Elfground" rel="noreferrer">Monica Alvmarken</a>, open-sourced on <a href="https://github.com/Elfground/react-dictionary-app" rel="noreferrer">GitHub</a> and hosted on <a href="https://world-word-app.netlify.app/" rel="noreferrer">Netlify</a>
     </footer>
     </div>
-    </div>
+  </div>
   );
 }
 
