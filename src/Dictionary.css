@@ -1,7 +1,7 @@
 .Dictionary {
-    margin: 0px 10px 10px 10px;
     margin-left: 80px;
     margin-right: 30px;
+    max-width: 500px;
 }
 
 .Dictionary h1 {
@@ -10,6 +10,7 @@
     font-size: 36px;
     text-align: left;
     margin-bottom: 3px;
+    margin-left: 30px;
 }
 .Dictionary .phonetic {
     font-family: "Josefin Sans", serif;
@@ -41,6 +42,10 @@
     min-width: 120px;
 }
 
+.Dictionary .row {
+    margin-left: 20px;
+    margin-right: 0px;
+}
 .Dictionary .definition-box {
     background: #B2DB46;
     padding: 5px;
