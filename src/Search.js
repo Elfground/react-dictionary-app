@@ -35,7 +35,7 @@ export default function Search({ onResults }) {
 
     return (
         <div className="Search">
-            <span className="question">What do you want to know?</span>
+            <span className="question">World of Words Dictionary</span>
         <form onSubmit={handleSubmit}>
             <input type="search" onChange={handleKeywordChange} placeholder="Search for a word..." autoFocus={true} className="form-control search-box" />
             <div className="input group input-group-sm">

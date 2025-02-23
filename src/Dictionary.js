@@ -29,9 +29,11 @@ export default function Dictionary({ results }) {
 
     return (
         <div className="Dictionary">
+            <div className="word-and-phonetic">
             <h1 className="text-capitalize">{results.word}</h1>
-
-            <div className="row">
+            {results.phonetic && <span className="phonetic">Phonetic: /{results.phonetic}/</span>}
+            </div>
+            <div className="row gx-2">
                 {selectedDefinitions.map((meaning, index) => (
                     <div key={index} className="meaning-container col">
                         {/* Checkbox för att toggla "Läs mer" */}
@@ -62,8 +64,6 @@ export default function Dictionary({ results }) {
                     </div>
                 ))}
             </div>
-
-            {results.phonetic && <p className="phonetic">Phonetic: /{results.phonetic}/</p>}
         </div>
     );
 }

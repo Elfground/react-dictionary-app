@@ -3,9 +3,10 @@
     display: block;
     margin: 0px 0px 0px 40px;
     border: 0.4px solid;
-    padding: 8px 5px 3px 5px;
-    max-width: 150px;
-    border-radius: 5px;
+    padding: 10px 5px 3px 5px;
+    max-width: 220px;
+    min-height: 110px;
+    border-radius: 8px;
     font-size: 10px;
     background-color: white;
     box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
@@ -18,34 +19,37 @@
     font-size: 12px;
     border-radius: 3px;
     color: black;
+    margin-bottom: 5px;
 }
 
 .Search .search-button {
     font-family: "Josefin Sans", serif;
     font-weight: 100px;
-    margin: 5px;
-    padding: 3px 18px 3px 18px;
+    font-size: 12px;
+    margin: 5px 5px 8px 5px;
+    padding: 5px 40px;
     background-color: rgba(92, 75, 91,1);
     color: white;
-    border-radius: 3px;
+    border-radius: 5px;
     border-style: none;
 }
 
 .Search .question {
     color: rgb(161, 209, 41);
     margin-left: -10px;
-    line-height: 20px;
+    line-height: 36px;
+    font-size: 16px;
 }
 
 ::placeholder {
     font-family: "Josefin Sans", serif;
     color: black;
     opacity: 1;
-    font-size: 11px;
+    font-size: 12px;
  }
   
   ::-ms-input-placeholder { /* Edge 12 -18 */
     font-family: "Josefin Sans", serif;
     color: black;
-    font-size: 11px;
+    font-size: 12px;
   }

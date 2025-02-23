@@ -13,7 +13,6 @@ export default function App() {
   return (
     <div className="App">
       <div className="container">
-      <h1>World of Words Dictionary</h1>
       <header>
     </header>
     <main>
