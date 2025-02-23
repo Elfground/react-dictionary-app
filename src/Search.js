@@ -23,7 +23,7 @@ export default function Search({ onResults, onPexelsResults }) {
         axios.get(apiUrl).then(handleResponse);
 
         let pexelsApiKey = "viui3bo1XHEp9TUeYnYjYiB94ERY0Aeb26TIyWDLlGK7V4ry4gfgqClp";
-        let pexelsApiUrl =`https://api.pexels.com/v1/search?query=${keyword}&per_page=6`;
+        let pexelsApiUrl =`https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
         let headers = {Authorization: `${pexelsApiKey}`};
         axios.get(pexelsApiUrl, { headers: headers}).then(handlePexelsResponse);
     }

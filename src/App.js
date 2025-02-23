@@ -32,6 +32,8 @@ function handlePexelsResults(data) {
     </main>
     <footer>
       Made by <a href="https://github.com/Elfground" rel="noreferrer">Monica Alvmarken</a>, open-sourced on <a href="https://github.com/Elfground/react-dictionary-app" rel="noreferrer">GitHub</a> and hosted on <a href="https://world-word-app.netlify.app/" rel="noreferrer">Netlify</a>
+      <br />
+      All photos provided by <a href="https://www.pexels.com/" rel="noreferrer">Pexels</a>
     </footer>
     </div>
   </div>

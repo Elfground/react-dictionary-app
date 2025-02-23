@@ -10,12 +10,13 @@ export default function Photogallery({ photos }) {
 
 return (
     <section className="Photogallery">
-        <h3>Related Images</h3>
         <div className="photo-gallery">
             {photos.map((photo, index) => (
-                    <img key={index}  src={photo.src?.landscape || photo.src?.medium || photo.src?.original} 
+                        <a key={index} href={photo.src.original} target="_blank" rel="noreferrer">
+                    <img src={photo.src?.landscape || photo.src?.medium || photo.src?.original} 
                     alt={photo.photographer || "Pexels Photo"} 
-                    className="photo" />
+                    className="img-fluid" />
+                    </a>
             ))}
         </div>
     </section>
